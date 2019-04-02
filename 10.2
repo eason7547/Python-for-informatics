@@ -1,0 +1,21 @@
+#exercise10.2
+inp = input("Please type in your file name:")
+
+#try and except for making sure the right file
+try: 
+	abc = open(inp)
+except:
+	print("invalid file name")
+
+#generating a dictionary to store time
+time = {}
+for lines in abc:
+	if lines.startswith("From:"): continue
+	if lines.startswith("From"):
+			words = lines.split()
+			word1 = words[5]
+			word = word1[:2]
+			time[word] = time.get(word,0)+1
+      
+#print out with sorted order
+print (sorted(time.items()))
