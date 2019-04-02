@@ -1,0 +1,25 @@
+#exercise10.1
+inp = input("Please type in your file name:")
+
+try: 
+	abc = open(inp)
+except:
+	print("invalid file name")
+
+name = {}
+for lines in abc:
+	if lines.startswith("From:"): continue
+	if lines.startswith("From"):
+			words = lines.split()
+			word = words[1]
+			name[word] = name.get(word,0)+1
+
+lst = []
+for key,value in name.items()
+	newtup = (value,key)
+	lst.append(newtup)
+
+lst = sorted(lst, reverse=True)
+
+for value, key in lst[:1]:
+	print(key,value)
